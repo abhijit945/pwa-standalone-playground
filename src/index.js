@@ -1,4 +1,4 @@
-require("./index.css");
+import "./index.css";
+import * as serviceWorker from "./main/worker/serviceWorker";
 
-const serviceWorker = require("./serviceWorker");
 serviceWorker.register();
