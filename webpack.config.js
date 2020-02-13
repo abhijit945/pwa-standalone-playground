@@ -1,4 +1,8 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
 module.exports = {
     bail: true,
     entry: "./src/index.js",
@@ -31,7 +35,7 @@ module.exports = {
     ],
     devServer: {
         publicPath: "/",
-        contentBase: "/build/",
+        contentBase: path.join(__dirname, "public"),
         port: 9000,
         hot: true
     }
