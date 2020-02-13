@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     bail: true,
     entry: "./src/index.js",
@@ -21,12 +22,17 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "public/index.ejs",
+            filename: "index.html",
+            inject: "body"
+        })
+    ],
     devServer: {
-        publicPath: "/build/",
+        publicPath: "/",
+        contentBase: "/build/",
         port: 9000,
-        hot: true,
-        historyApiFallback: {
-            index: "public/index.html"
-        }
+        hot: true
     }
 };
