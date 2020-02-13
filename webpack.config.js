@@ -1,7 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 module.exports = {
     bail: true,
@@ -18,7 +16,7 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
