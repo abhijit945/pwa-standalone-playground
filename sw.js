@@ -1,5 +1,5 @@
 var cacheName = "try-pwa-standalone";
-var filesToCache = ["/", "/index.html", "/bundle.js"];
+var filesToCache = ["./", "./index.html", "./bundle.js"];
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener("install", function(e) {
